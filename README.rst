@@ -1,6 +1,7 @@
 
 
 
+
 Applying Cyberpandas
 =============================
 Many aspects of a chart's appearance can be configured at the top level using
@@ -139,26 +140,7 @@ defining default properties for each mark.
 
 For general configuration of all mark types, use:
 
-- :meth:`Chart.configure_mark`
 
-For configurations specific to particular mark types, use:
-
-- :meth:`Chart.configure_area`
-- :meth:`Chart.configure_bar`
-- :meth:`Chart.configure_circle`
-- :meth:`Chart.configure_geoshape`
-- :meth:`Chart.configure_line`
-- :meth:`Chart.configure_point`
-- :meth:`Chart.configure_rect`
-- :meth:`Chart.configure_rule`
-- :meth:`Chart.configure_square`
-- :meth:`Chart.configure_text`
-- :meth:`Chart.configure_tick`
-- :meth:`Chart.configure_trail`
-
-Each of the above methods accepts the following properties:
-
-.. altair-object-table:: altair.MarkConfig
 
 In addition to the default mark properties above, default values can be
 further customized using named styles defined as keyword arguments to
@@ -175,8 +157,6 @@ Scale Configuration
 Scales can be configured using :meth:`Chart.configure_scale`, which has
 the following properties:
 
-.. altair-object-table:: altair.ScaleConfig
-
 
 
 
@@ -187,7 +167,6 @@ Scale Range Configuration
 Scale ranges can be configured using :meth:`Chart.configure_range`, which has
 the following properties:
 
-.. altair-object-table:: altair.RangeConfig
 
 
 
@@ -198,7 +177,6 @@ Projection Configuration
 ------------------------
 :meth:`Chart.configure_projection`
 
-.. altair-object-table:: altair.ProjectionConfig
 
 
 
@@ -207,8 +185,6 @@ Projection Configuration
 Selection Configuration
 -----------------------
 :meth:`Chart.configure_selection`
-
-.. altair-object-table:: altair.SelectionConfig
 
 
 
