@@ -39,7 +39,6 @@ The :meth:`Chart.configure_header` method allows configuration of facet headers,
 including the font, color, size, and position of the title and labels.
 Here is an example:
 
-.. altair-plot::
 
     import altair as alt
     from vega_datasets import data
@@ -75,33 +74,6 @@ The :meth:`Chart.configure_legend` allows you to customize the appearance of cha
 legends, including location, fonts, bounding boxes, colors, and more.
 Here is an example:
 
-.. altair-plot::
-
-    import altair as alt
-    from vega_datasets import data
-
-    source = data.cars.url
-
-    chart = alt.Chart(source).mark_point().encode(
-        x='Horsepower:Q',
-        y='Miles_per_Gallon:Q',
-        color='Origin:N'
-    )
-
-    chart.configure_legend(
-        strokeColor='gray',
-        fillColor='#EEEEEE',
-        padding=10,
-        cornerRadius=10,
-        orient='top-right'
-    )
-
-Additional properties are  summarized in the following table:
-
-.. altair-object-table:: altair.LegendConfig
-
-
-
 
 
 
@@ -126,15 +98,12 @@ definition object.
 
 
 
-
 View Configuration
 ------------------
 The :meth:`Chart.configure_view` method allows you to configure aspects of the
 chart's *view*, i.e. the area of the screen in which the data and scales are
 drawn. Here is an example to demonstrate some of the visual features that can
 be controlled:
-
-.. altair-plot::
 
     import altair as alt
     from vega_datasets import data
@@ -153,10 +122,6 @@ be controlled:
         fill='#FFEEDD',
         stroke='red',
     )
-
-Additional properties are summarized in the following table:
-
-.. altair-object-table:: altair.ViewConfig
 
 
 
@@ -201,17 +166,6 @@ If you would like to enable any other theme for the length of your Python sessio
 you can call ``alt.themes.enable(theme_name)``.
 For example, Altair includes a theme in which the chart background is opaque
 rather than transparent:
-
-.. altair-plot::
-    :output: repr
-
-    alt.themes.enable('opaque')
-    chart.to_dict()
-
-.. altair-plot::
-
-    chart
-
 
 
 Notice that the background color of the chart is now set to white.
