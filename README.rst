@@ -1,7 +1,6 @@
 
 
 
-
 Applying Cyberpandas
 =============================
 Many aspects of a chart's appearance can be configured at the top level using
@@ -12,23 +11,6 @@ they set the default styles for the entire chart, and these defaults can be
 overridden by specific style settings associated with chart elements.
 
 These methods and their arguments will be outlined below:
-
-
-
-For more discussion of approaches to chart customization, see
-:ref:`user-guide-customization`.
-
-
-
-
-
-Chart Configuration
--------------------
-The :meth:`Chart.configure` method adds a :class:`Config` instance to the chart,
-and has the following attributes:
-
-.. altair-object-table:: altair.Config
-
 
 
 
@@ -47,13 +29,6 @@ property will only apply to axes visualizing "band" scales.
 If multiple axis config blocks apply to a single axis, type-based options
 take precedence over orientation-based options, which in turn take precedence
 over general options.
-
-
-
-They have the following properties:
-
-.. altair-object-table:: altair.AxisConfig
-
 
 
 
@@ -152,43 +127,6 @@ definition object.
 
 
 
-Scale Configuration
--------------------
-Scales can be configured using :meth:`Chart.configure_scale`, which has
-the following properties:
-
-
-
-
-
-
-Scale Range Configuration
--------------------------
-Scale ranges can be configured using :meth:`Chart.configure_range`, which has
-the following properties:
-
-
-
-
-
-
-
-Projection Configuration
-------------------------
-:meth:`Chart.configure_projection`
-
-
-
-
-
-
-Selection Configuration
------------------------
-:meth:`Chart.configure_selection`
-
-
-
-
 View Configuration
 ------------------
 The :meth:`Chart.configure_view` method allows you to configure aspects of the
@@ -280,27 +218,12 @@ Notice that the background color of the chart is now set to white.
 If you would like no theme applied to your chart, you can use the
 theme named ``'none'``:
 
-.. altair-plot::
-    :output: repr
-
-    alt.themes.enable('none')
-    chart.to_dict()
-
-.. altair-plot::
-
-    chart
-
 Because the view configuration is not set, the chart is smaller
 than the default rendering.
 
 If you would like to use any theme just for a single chart, you can use the
 ``with`` statement to enable a temporary theme:
 
-.. altair-plot::
-   :output: none
-
-   with alt.themes.enable('default'):
-       spec = chart.to_json()
 
 Currently Altair does not offer many built-in themes, but we plan to add
 more options in the future.
