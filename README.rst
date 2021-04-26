@@ -1,8 +1,7 @@
 
 
-.. _user-guide-configuration:
 
-Top-Level Chart Configuration
+Applying Cyberpandas
 =============================
 Many aspects of a chart's appearance can be configured at the top level using
 the ``configure_*()`` methods.
@@ -13,23 +12,14 @@ overridden by specific style settings associated with chart elements.
 
 These methods and their arguments will be outlined below:
 
-- :ref:`config-chart` :meth:`Chart.configure`
-- :ref:`config-axis` :meth:`Chart.configure_axis`
-- :ref:`config-header` :meth:`Chart.configure_header`
-- :ref:`config-legend` :meth:`Chart.configure_legend`
-- :ref:`config-mark` :meth:`Chart.configure_mark`
-- :ref:`config-scale` :meth:`Chart.configure_scale`
-- :ref:`config-range` :meth:`Chart.configure_range`
-- :ref:`config-projection` :meth:`Chart.configure_projection`
-- :ref:`config-selection` :meth:`Chart.configure_selection`
-- :ref:`config-title` :meth:`Chart.configure_title`
-- :ref:`config-view` :meth:`Chart.configure_view`
+
 
 For more discussion of approaches to chart customization, see
 :ref:`user-guide-customization`.
 
 
-.. _config-chart:
+
+
 
 Chart Configuration
 -------------------
@@ -39,7 +29,8 @@ and has the following attributes:
 .. altair-object-table:: altair.Config
 
 
-.. _config-axis:
+
+
 
 Axis Configuration
 ------------------
@@ -56,23 +47,15 @@ If multiple axis config blocks apply to a single axis, type-based options
 take precedence over orientation-based options, which in turn take precedence
 over general options.
 
-The methods are the following:
 
-- :meth:`Chart.configure_axis`
-- :meth:`Chart.configure_axisBand`
-- :meth:`Chart.configure_axisBottom`
-- :meth:`Chart.configure_axisLeft`
-- :meth:`Chart.configure_axisRight`
-- :meth:`Chart.configure_axisTop`
-- :meth:`Chart.configure_axisX`
-- :meth:`Chart.configure_axisY`
 
 They have the following properties:
 
 .. altair-object-table:: altair.AxisConfig
 
 
-.. _config-header:
+
+
 
 Header Configuration
 --------------------
@@ -107,7 +90,8 @@ Here is an example:
 .. altair-object-table:: altair.HeaderConfig
 
 
-.. _config-legend:
+
+
 
 Legend Configuration
 --------------------
@@ -141,7 +125,9 @@ Additional properties are  summarized in the following table:
 .. altair-object-table:: altair.LegendConfig
 
 
-.. _config-mark:
+
+
+
 
 Mark and Mark Style Configuration
 ---------------------------------
@@ -181,7 +167,8 @@ Styles can then be invoked by including a style property within a mark
 definition object.
 
 
-.. _config-scale:
+
+
 
 Scale Configuration
 -------------------
@@ -191,7 +178,9 @@ the following properties:
 .. altair-object-table:: altair.ScaleConfig
 
 
-.. _config-range:
+
+
+
 
 Scale Range Configuration
 -------------------------
@@ -201,7 +190,9 @@ the following properties:
 .. altair-object-table:: altair.RangeConfig
 
 
-.. _config-projection:
+
+
+
 
 Projection Configuration
 ------------------------
@@ -210,7 +201,8 @@ Projection Configuration
 .. altair-object-table:: altair.ProjectionConfig
 
 
-.. _config-selection:
+
+
 
 Selection Configuration
 -----------------------
@@ -219,41 +211,7 @@ Selection Configuration
 .. altair-object-table:: altair.SelectionConfig
 
 
-.. _config-title:
 
-Title Configuration
--------------------
-The :meth:`Chart.configure_title` method allows configuration of the chart
-title, including the font, color, placement, and orientation.
-Here is an example:
-
-.. altair-plot::
-
-    import altair as alt
-    from vega_datasets import data
-
-    source = data.cars.url
-
-    chart = alt.Chart(source).mark_point().encode(
-        x='Horsepower:Q',
-        y='Miles_per_Gallon:Q',
-    ).properties(
-        title='Cars Data'
-    )
-
-    chart.configure_title(
-        fontSize=20,
-        font='Courier',
-        anchor='start',
-        color='gray'
-    )
-
-Additional title configuration options are listed in the following table:
-
-.. altair-object-table:: altair.TitleConfig
-
-
-.. _config-view:
 
 View Configuration
 ------------------
@@ -287,7 +245,8 @@ Additional properties are summarized in the following table:
 .. altair-object-table:: altair.ViewConfig
 
 
-.. _chart-themes:
+
+
 
 Altair Themes
 -------------
@@ -317,11 +276,10 @@ added to its specification:
 
     chart.to_dict()
 
-The rendered chart will then reflect these configurations:
 
-.. altair-plot::
 
-    chart
+
+
 
 Changing the Theme
 ~~~~~~~~~~~~~~~~~~
@@ -339,6 +297,8 @@ rather than transparent:
 .. altair-plot::
 
     chart
+
+
 
 Notice that the background color of the chart is now set to white.
 If you would like no theme applied to your chart, you can use the
@@ -368,6 +328,11 @@ If you would like to use any theme just for a single chart, you can use the
 
 Currently Altair does not offer many built-in themes, but we plan to add
 more options in the future.
+
+
+
+
+
 
 Defining a Custom Theme
 ~~~~~~~~~~~~~~~~~~~~~~~
@@ -414,8 +379,6 @@ altair-plot::
 
 
 If you want to restore the default theme, use::
-
-
 
    alt.themes.enable('default')
 
